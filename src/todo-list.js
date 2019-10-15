@@ -10,7 +10,7 @@ const Action = props => {
         value={value}
         onChange={e => setValue(e.target.value.trim())}
         onKeyUp={e => {
-          if (e.which === 13) {
+          if (e.key === "Enter") {
             value && props.onAdd(value);
             setValue("");
           }

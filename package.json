@@ -30,7 +30,6 @@
       "react-hooks"
     ],
     "rules": {
-      "additional-rule": "warn",
       "react-hooks/rules-of-hooks": "error",
       "react-hooks/exhaustive-deps": "warn"
     },
