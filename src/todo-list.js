@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./todo-list.scss";
 
 const Action = props => {
@@ -52,6 +52,11 @@ const App = props => {
     { name: "react", id: 1 },
     { name: "vue", id: 2 }
   ]);
+
+  useEffect(() => {
+    console.log("app mount");
+    document.title = "My App";
+  }, []);
 
   return (
     <div>

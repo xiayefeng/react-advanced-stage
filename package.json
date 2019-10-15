@@ -23,7 +23,21 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": ["react-app", "shared-config"],
+    "plugins": ["react-hooks"],
+    "rules": {
+      "additional-rule": "warn",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn"
+    },
+    "overrides": [
+      {
+        "files": ["**/*.ts?(x)"],
+        "rules": {
+          "additional-typescript-only-rule": "warn"
+        }
+      }
+    ]
   },
   "browserslist": {
     "production": [
@@ -41,12 +55,14 @@
     "@babel/plugin-proposal-class-properties": "^7.5.5",
     "@babel/plugin-proposal-decorators": "^7.6.0",
     "customize-cra": "^0.8.0",
+    "eslint-plugin-react-hooks": "^2.1.2",
     "husky": "^3.0.9",
     "lint-staged": "^9.4.2",
     "node-sass": "^4.12.0",
     "prettier": "^1.18.2",
     "react-app-rewired": "^2.1.3",
     "sass-loader": "^8.0.0",
+    "shared-config": "^0.3.2",
     "snazzy": "^8.0.0",
     "source-map-explorer": "^2.1.0",
     "standard": "^14.3.1"
