@@ -1,8 +1,35 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component } from "react";
+import { observable } from "mobx";
+import { observer } from "mobx-react";
+// import logo from './logo.svg';
+import "./App.css";
 
-function App() {
+@observer
+class App extends Component {
+  @observable value = "a";
+  constructor(props) {
+    super(props);
+    this.state = {
+      time: 0
+    };
+  }
+
+  render() {
+    const { time } = this.state;
+    return (
+      <div>
+        App
+        <input
+          value={this.value}
+          onChange={e => (this.value = e.target.value)}
+        />
+        {this.value}
+      </div>
+    );
+  }
+}
+
+/* function App() {
   return (
     <div className="App">
       <header className="App-header">
@@ -21,6 +48,6 @@ function App() {
       </header>
     </div>
   );
-}
+} */
 
 export default App;
