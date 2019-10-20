@@ -1,4 +1,4 @@
-import { observable, action, set } from "mobx";
+import { observable, action } from "mobx";
 
 const addForm = {
   title: "",
@@ -34,8 +34,9 @@ class Post {
   @action.bound
   handleAdd() {
     let arr = this.list.slice();
-    console.log(arr);
-    set(this.list, this.list.length, this.addForm);
+    this.addForm.id = arr.length + 1;
+    arr[arr.length] = this.addForm;
+    this.list = arr;
     // arr.push(...this.addForm)
     // this.list = arr
   }
