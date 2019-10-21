@@ -36,7 +36,7 @@ class Post {
     let arr = this.list.slice();
     this.addForm.id = arr.length + 1;
     arr[arr.length] = this.addForm;
-    this.list = arr;
+    this.list = arr.slice();
     // arr.push(...this.addForm)
     // this.list = arr
   }
